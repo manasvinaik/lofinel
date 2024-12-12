@@ -1,0 +1,347 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Pixeled Font */
+@font-face {
+  font-family: 'Pixeled';
+  src: url('/assets/fonts/Pixeled.ttf');
+}
+
+/* Background Container */
+.background-container {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Utility and About Parent Container */
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100vh; 
+  position: relative;
+}
+
+/* About Section */
+.about-container {
+  position: fixed;
+  top: 25px;
+  right: 15px; 
+  width: 20rem;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end; 
+  gap: 10px; 
+  z-index: 20;
+  max-width: 100vw; 
+  padding: 0.3rem;
+}
+
+/* Icons Wrapper */
+.icons-wrapper {
+  display: flex;
+  gap: 10px; 
+  justify-content: flex-end; 
+  width: 100%; 
+}
+
+.icon-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  object-fit: contain;
+  background: none;
+  cursor: pointer;
+}
+
+.icon.heart {
+  margin-left: 5px;
+}
+
+.icon.about {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-right: 5px;
+}
+
+.maximize {
+  transform: rotate(90deg);
+}
+
+/* Hover Effect for Icons */
+.icon-wrapper:hover .icon-text {
+  display: block;
+}
+
+.icon-text {
+  display: none;
+  font-family: 'Pixeled', sans-serif;
+  color: white;
+  font-size: 0.75rem;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Instructions Section */
+.instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+  text-align: right; 
+  gap: 4px;
+  font-family: 'Pixeled', sans-serif;
+  font-size: 0.7rem;
+  color: white;
+  margin-top: 1rem; 
+  top: 35px; 
+  left: 60%; 
+  transform: translateX(6%);
+}
+
+.instruction-text {
+  padding: 5px 0; 
+}
+
+/* Instagram Image and Link */
+.instagram-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem; 
+}
+
+.instagram-image {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+}
+
+.instagram-link {
+  margin-top: 0.5rem;
+  font-family: 'Pixeled', sans-serif;
+  font-size: 0.8rem;
+  color: white; 
+  text-decoration: underline; 
+  transition: color 0.3s ease; 
+}
+
+.instagram-link:hover {
+  color: #73c2fb; 
+  text-decoration: underline; 
+}
+
+/* VHS Effect */
+.vhs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 5px,
+    rgba(2, 131, 199, 0.5) 15px,
+    rgba(120, 171, 42, 0.5) 15px,
+    rgba(227, 37, 28, 0.7) 15px,
+    transparent 5px
+  );
+  background-size: 100% 100px;
+  animation: vhsEffect 7s linear infinite;
+}
+
+@keyframes vhsEffect {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+/* Player Component Styles */
+.player-container {
+  position: fixed;
+  bottom: 0rem;
+  left: 1rem; 
+  padding: 1rem;
+  background: none;
+  font-family: 'Pixeled', sans-serif;
+  color: white;
+  border-radius: 8px;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  z-index: 20; 
+}
+
+.player-controls {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.player-icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.player-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.flip-icon {
+  transform: rotate(180deg);
+}
+
+.song-title {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+/* Utility Component */
+.utility-container {
+  position: fixed;
+  top: 0.3rem; 
+  padding: 0.3rem;
+  left: 1rem;
+  z-index: 20; 
+  font-family: 'Pixeled', sans-serif;
+  color: white;
+  max-width: 100vw;
+}
+
+.utility-text {
+  font-size: 0.8rem;
+}
+
+/* Song title */
+.song-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem; 
+}
+
+/* Styles for progress bars */
+.progress-bars {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  gap: 0.25rem;
+}
+
+.progress-bar {
+  width: 0.5rem;
+  height: 24px;
+  background-color: #fff;
+  opacity: 0.5;
+  margin-right: 0.2rem;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  cursor: pointer; 
+}
+
+.progress-bar.full-opacity {
+  opacity: 1;
+}
+
+.progress-bar.low-opacity {
+  opacity: 0.5;
+}
+
+.progress-bar:hover {
+  background-color: #73c2fb; 
+}
+
+.switch-wrapper {
+  position: relative;
+  display: inline-block; 
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: 110%; 
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff; 
+  font-family: 'Pixeled', sans-serif;
+  font-size: 0.7rem;
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap; 
+  z-index: 50; 
+  pointer-events: none; 
+}
+
+.switch-wrapper:hover .tooltip {
+  display: block; 
+}
+
+/* Fullscreen loader container */
+.custom-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black; 
+  z-index: 9; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.expanding-rectangle {
+  width: 100%; 
+  height: 10px; 
+  background-repeat: no-repeat;
+  animation: expandGif 1s ease-in-out forwards;
+}
+
+@keyframes expandGif {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+  50%{
+    width: 100%;
+    height: 10px;
+    opacity: 1;
+  }
+  100% {
+    height: 100%;
+    opacity: 0.7;
+  }
+}
